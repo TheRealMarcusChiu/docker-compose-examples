@@ -1,0 +1,15 @@
+services:
+  code-server:
+    image: codercom/code-server:latest
+    container_name: docker-compose-code-server
+    restart: unless-stopped
+    ports:
+        - "8009:8080"
+    environment:
+      PUID: 1000
+      PGID: 1000
+      DOCKER_USER: marcuschiu
+    volumes:
+      - "./data/local:/home/coder/.local"
+      - "./data/config:/home/coder/.config"
+      - "./data/project:/home/coder/project"

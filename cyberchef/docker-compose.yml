@@ -1,0 +1,7 @@
+services:
+  cyberchef-server:
+    image: ghcr.io/gchq/cyberchef:latest 
+    container_name: docker-compose-cyberchef
+    restart: unless-stopped
+    ports:
+        - "8002:80" 

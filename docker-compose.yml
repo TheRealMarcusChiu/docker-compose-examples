@@ -1,0 +1,16 @@
+include:
+  - path: './gitea/docker-compose.yml'
+  - path: './mealie/docker-compose.yml'
+  - path: './librespeed/docker-compose.yml'
+  - path: './archivebox/docker-compose.yml'
+  - path: './cyberchef/docker-compose.yml'
+  - path: './dashy/docker-compose.yml'
+  - path: './homepage/docker-compose.yml'
+  - path: './materialious/docker-compose.yml'
+  - path: './photoprism/docker-compose.yml'
+  - path: './stirling-pdf/docker-compose.yml'
+  - path: './whoogle-search/docker-compose.yml'
+  - path: './code-server/docker-compose.yml'
+  - path: './gitlab/docker-compose.yml'
+#  - path: './searxng-docker/docker-compose.yaml'
+

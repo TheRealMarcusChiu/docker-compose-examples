@@ -1,0 +1,17 @@
+services:
+  stirling-pdf-server:
+    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
+    container_name: docker-compose-stirling-pdf
+    restart: unless-stopped
+    ports:
+      - '8006:8080'
+    volumes:
+      - ./data/StirlingPDF/trainingData:/usr/share/tessdata # Required for extra OCR languages
+      - ./data/StirlingPDF/extraConfigs:/configs
+      - ./data/StirlingPDF/customFiles:/customFiles/
+      - ./data/StirlingPDF/logs:/logs/
+      - ./data/StirlingPDF/pipeline:/pipeline/
+    environment:
+      - DOCKER_ENABLE_SECURITY=false
+      - LANGS=en_US
+

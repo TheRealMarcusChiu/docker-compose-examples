@@ -1,0 +1,19 @@
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:rc
+    container_name: docker-compose-gitlab
+    restart: unless-stopped
+    hostname: 'gitlab.lan'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.lan'
+        gitlab_rails['gitlab_shell_ssh_port'] = 223
+    ports:
+      - '8010:80'
+      - '4430:443'
+      - '223:22'
+    volumes:
+      - './data/config:/etc/gitlab'
+      - './data/logs:/var/log/gitlab'
+      - './data/data:/var/opt/gitlab'
+    shm_size: '256m'
